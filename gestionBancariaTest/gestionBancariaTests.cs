@@ -35,6 +35,20 @@ namespace gestionBancariaTest
             Assert.AreEqual(saldoEsperado, saldoActual, 0.001, "No es correcto");
         }
 
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void validarMetodoReintegroConArgument()
+        {
+            double saldoInicial = 1000;
+            double reintegro = 1500;
+            double saldoActual = 0;
+            double saldoEsperado = 500;
+            gestionBancaria cuenta = new gestionBancaria(saldoInicial);
+            cuenta.realizarReintegro(reintegro);
+            saldoActual = cuenta.obtenerSaldo();
+            Assert.AreEqual(saldoEsperado, saldoActual, 0.001, "No es correcto");
+        }
+
 
     }
 }

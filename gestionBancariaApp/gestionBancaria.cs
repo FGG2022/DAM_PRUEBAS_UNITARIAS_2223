@@ -56,7 +56,7 @@ public class gestionBancaria
         else
         {
             if (cantidad > 0)
-                saldo -= cantidad;
+                saldo += cantidad;
         }
       
     }

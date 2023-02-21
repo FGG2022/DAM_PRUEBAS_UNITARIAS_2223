@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using gestionBancariaApp;
 
 /// <summary>
 /// Summary description for Class1

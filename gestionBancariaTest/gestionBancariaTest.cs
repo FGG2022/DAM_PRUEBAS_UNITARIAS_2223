@@ -7,6 +7,9 @@ namespace gestionBancariaTest
     [TestClass]
     public class gestionBancariaTest
     {
+        // ---------------------------------- MÉTODOS DE PRUEBA INICIALES (SIN EXCEPCIONES)--------------------------------
+        // Los métodos comentados son los que se han pasado a excepciones en el punto 8 de la práctica.
+
         [TestMethod]
         public void validarMetodoIngreso()
         {
@@ -168,7 +171,7 @@ namespace gestionBancariaTest
             Assert.AreEqual(saldoEsperado, saldoActual, 0.001, "El saldo de la cuenta no es correcto.");
         }
 
-        // ---------------------------------- MÉTODOS DE PRUEBA CON EXCEPCIONES------------------------------
+        // --------------------------------------- MÉTODOS DE PRUEBA CON EXCEPCIONES---------------------------------------
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]

@@ -75,4 +75,16 @@ public class gestionBancaria
         }
 
     }
+
+    public void aperturaCuenta(double cantidadApertura)
+    {
+        if(cantidadApertura >=1 && cantidadApertura <= 100)
+        {
+            saldo = cantidadApertura;
+        }
+        else
+        {
+            saldo = 0;
+        }
+    }
 }

@@ -92,5 +92,54 @@ namespace gestionBancariaTest
             //Assert.AreEqual(saldoEsperado, saldoActual, 0.001, "El saldo de la cuenta no es correcto");
 
         }
+
+        //Nuevo código examen
+
+        //Primer método para validar que los valores estén entre entre 1 y 100
+        [TestMethod]
+        public void validarAperturaCuenta()
+        {
+            // preparación del caso de prueba
+            double saldoInicial = 50
+            double cantidadApertura1 = 1
+            double cantidadApertura100 = 100
+            double cantidadApertura30 = 30
+
+            gestionBancaria cuenta = new gestionBancaria(saldoInicial);
+
+            // Método a probar
+            cuenta.aperturaCuenta(cantidadApertura100);
+
+            // afirmación de la prueba (valor esperado Vs. Valor obtenido)
+            saldoActual = cuenta.obtenerSaldo();
+
+            Assert.AreEqual(cantidadApertura100, saldoActual, 0.001, "No se ha podido realizar la apertura de la cuenta");
+
+        }
+
+
+        //Segundo método para validar que los valores que no estén entre entre 1 y 100
+        [TestMethod]
+        public void validarAperturaCuenta2()
+        {
+            // preparación del caso de prueba
+            double saldoInicial = 50
+            double cantidadApertura0 = 0
+            double cantidadApertura101 = 101
+
+            gestionBancaria cuenta = new gestionBancaria(saldoInicial);
+
+            // Método a probar
+            cuenta.aperturaCuenta(reintegro);
+
+            // afirmación de la prueba (valor esperado Vs. Valor obtenido)
+            saldoActual = cuenta.obtenerSaldo();
+
+            Assert.AreEqual(cantidadApertura101, saldoActual, 0.001, "No se ha podido realizar la apertura de la cuenta");
+
+        }
+
+
+
     }
 }

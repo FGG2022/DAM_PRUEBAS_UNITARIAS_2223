@@ -30,7 +30,7 @@ public class gestionBancaria
 
         if (cantidad <= 0)
         {
-            mostrarError(ERR_CANTIDAD_INDICADA_NEGATIVA);
+            throw new ArgumentOutOfRangeException("Cantidad indicada es negativa");
         }
         else
         {
@@ -40,7 +40,7 @@ public class gestionBancaria
                 
             }
             else
-                mostrarError(ERR_SALDO_INSUFICIENTE);
+                throw new ArgumentOutOfRangeException("Saldo insuficiente");
 
         }
  
@@ -56,7 +56,7 @@ public class gestionBancaria
         else
         {
             if (cantidad > 0)
-                saldo -= cantidad;
+                saldo += cantidad;
         }
       
     }
